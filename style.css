@@ -1,0 +1,487 @@
+/*
+ ajustes generales
+ el tamaño de los elementos incluye sus bordes y espacios 
+*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    background-color: #e9edf3;
+    color: #344256;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h2,
+h3 {
+    color: #16375b;
+    line-height: 1.3;
+}
+
+a {
+    color: #086d96;
+    overflow-wrap: anywhere;
+}
+
+/*
+ contenedor principal
+ Mantiene la página centrada y limita su ancho
+*/
+.pagina {
+    max-width: 1120px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 10px 40px #172e491a;
+}
+
+/*
+  resalta el elemento seleccionado al navegar 
+*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #087fa6;
+    outline-offset: 4px;
+}
+
+/*
+ portada
+ 
+*/
+.portada {
+    min-height: 300px;
+    padding: 45px;
+    background-color: #102e59;
+    background-image:
+        linear-gradient(90deg, #071b3c66, transparent),
+        url("portada.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+h1 {
+    margin-bottom: 14px;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.15;
+}
+
+.cargo {
+    display: inline-block;
+    background-color: #071b3c;
+    padding: 5px 12px;
+    margin: 0;
+    font-weight: 600;
+}
+
+/*
+ fotografía circular
+ object-fit evita que la imagen se deforme
+*/
+.foto {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 7px solid white;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px #00183340;
+}
+
+/*
+ menú horizontal
+ los enlaces pasan a otra fila si no hay suficiente espacio
+*/
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #dce3eb;
+    padding: 0 20px;
+}
+
+.navegacion a {
+    padding: 16px;
+    color: #3c4858;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+}
+
+.navegacion a:hover {
+    color: #086d96;
+    background-color: #f0f7fb;
+    border-bottom-color: #086d96;
+}
+
+/*
+ distribución en dos columnas
+ información personal a la izquierda y contenido a la derecha
+*/
+.distribucion {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+}
+
+/*
+columna lateral
+*/
+.lateral {
+    padding: 30px 22px;
+    background-color: #f5f7fa;
+    border-right: 1px solid #e0e6ee;
+    font-size: 14px;
+}
+
+.lateral section {
+    margin-bottom: 30px;
+}
+
+.lateral h2 {
+    background-color: #16375b;
+    color: white;
+    padding: 9px 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rotulo {
+    color: #596d83;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.lateral ul {
+    padding-left: 18px;
+}
+
+/*
+ herramientas mostradas como pequeñas etiquetas
+*/
+.herramientas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    list-style: none;
+}
+
+.lateral .herramientas {
+    padding: 0;
+}
+
+.herramientas li {
+    padding: 4px 9px;
+    border: 1px solid #d3e0eb;
+    border-radius: 4px;
+    background-color: white;
+    color: #16375b;
+    font-size: 12px;
+}
+
+/*
+ aapariencia del enlace para contactar por correo
+*/
+.boton-contacto {
+    display: block;
+    padding: 10px;
+    background-color: #086d96;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.boton-contacto:hover {
+    background-color: #164567;
+}
+
+/*
+ secciones principales y sus títulos
+*/
+.contenido {
+    min-width: 0;
+    padding: 35px;
+}
+
+.contenido > section {
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #e2e8ef;
+    scroll-margin-top: 20px;
+}
+
+.contenido > section:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.numero {
+    color: #086d96;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.contenido h2 {
+    font-size: 26px;
+    margin-bottom: 22px;
+}
+
+.destacado {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background-color: #edf6fb;
+    border-left: 4px solid #087fa6;
+    color: #23476a;
+}
+
+/*
+ experiencia laboral
+ el borde izquierdo ayuda a separar cada experiencia
+*/
+.experiencia {
+    border-left: 2px solid #d7e7f1;
+    padding-left: 22px;
+    margin-bottom: 30px;
+}
+
+.experiencia:last-child {
+    margin-bottom: 0;
+}
+
+.fecha {
+    color: #61758b;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.experiencia h3 {
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+
+.empresa {
+    color: #086d96;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.experiencia ul {
+    padding-left: 18px;
+}
+
+.experiencia li {
+    margin-bottom: 7px;
+}
+
+/*
+ tarjetas de proyectos
+*/
+.proyectos {
+    display: grid;
+    gap: 16px;
+}
+
+.tarjeta {
+    background-color: #f8fafc;
+    border: 1px solid #dfe7ef;
+    border-radius: 8px;
+    padding: 22px;
+}
+
+.categoria {
+    color: #086d96;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.tarjeta h3 {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.tarjeta p:last-child {
+    margin-bottom: 0;
+}
+
+.reconocimiento {
+    color: #235f56;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/*
+ formacion academica y estado de los estudios
+*/
+.estudio {
+    margin-bottom: 22px;
+}
+
+.estudio h3 {
+    margin-top: 8px;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.estado {
+    display: inline-block;
+    background-color: #e6f2f8;
+    color: #225773;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/*
+ diseño de la calculadora
+ El funcionamiento se agregara despues con PHP
+*/
+.caja-calculadora {
+    max-width: 450px;
+    padding: 24px;
+    background-color: #f5f8fc;
+    border: 1px solid #dfe7ef;
+    border-radius: 8px;
+}
+
+#aviso {
+    color: #5c6c80;
+    font-size: 13px;
+}
+
+fieldset {
+    min-width: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 11px;
+    border: 1px solid #c6d3df;
+    border-radius: 5px;
+    background-color: white;
+    color: #344256;
+    font: inherit;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #086d96;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+fieldset:disabled button {
+    background-color: #65798c;
+    cursor: not-allowed;
+}
+
+/*
+ pie de pagina
+*/
+footer {
+    padding: 22px;
+    background-color: #16375b;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer p {
+    margin-bottom: 6px;
+}
+
+footer a {
+    color: #b9eaff;
+}
+
+/*
+ ajustes para pantallas pequenas
+ las dos columnas se convierten en una sola
+*/
+@media (max-width: 700px) {
+    body {
+        padding: 0;
+    }
+
+    .portada {
+        flex-direction: column-reverse;
+        padding: 30px 22px;
+        text-align: center;
+    }
+
+    .foto {
+        width: 140px;
+        height: 140px;
+    }
+
+    .navegacion {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .navegacion a {
+        padding: 12px;
+    }
+
+    .distribucion {
+        grid-template-columns: 1fr;
+    }
+
+    .lateral {
+        border-right: none;
+        border-bottom: 1px solid #e0e6ee;
+    }
+
+    .contenido {
+        padding: 25px 20px;
+    }
+}
+
