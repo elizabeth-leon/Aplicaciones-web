@@ -1,0 +1,10 @@
+# Configuración privada de la base de datos
+config/database.php
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Archivo temporal de pruebas
+public/test_conexion.php
