@@ -1,0 +1,8 @@
+@model SistemaCursosIA.Models.Instructor
+@{ ViewData["Title"] = "Detalle"; }
+<h1>Detalle de instructor</h1>
+<div class="panel"><dl><dt>Nombre</dt><dd>@Model.Nombre</dd>
+<dt>Apellido</dt><dd>@Model.Apellido</dd>
+<dt>Especialidad</dt><dd>@Model.Especialidad</dd>
+<dt>Correo</dt><dd>@Model.Correo</dd></dl>
+<div class="form-actions"><a class="button primary" asp-action="Edit" asp-route-id="@Model.Id">Editar</a><a class="button" asp-action="Index">Volver</a></div></div>

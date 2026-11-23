@@ -1,0 +1,15 @@
+@model SistemaCursosIA.Models.Curso
+@{ ViewData["Title"] = "Nuevo curso de IA"; }
+<h1>Nuevo curso de IA</h1>
+<div class="panel">
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="validation-summary-errors"></div>
+
+    <div class="field"><label asp-for="Nombre"></label><input asp-for="Nombre" type="text" class="input"/><span asp-validation-for="Nombre"></span></div>
+<div class="field"><label asp-for="Nivel"></label><input asp-for="Nivel" type="text" class="input"/><span asp-validation-for="Nivel"></span></div>
+<div class="field"><label asp-for="Cupos"></label><input asp-for="Cupos" type="number" class="input"/><span asp-validation-for="Cupos"></span></div>
+<div class="field"><label asp-for="InstructorId"></label><select asp-for="InstructorId" asp-items="ViewBag.InstructorId"><option value="">Selecciona una opción</option></select><span asp-validation-for="InstructorId"></span></div>
+    <div class="form-actions"><button type="submit" class="button primary">Guardar</button><a class="button" asp-action="Index">Cancelar</a></div>
+</form>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

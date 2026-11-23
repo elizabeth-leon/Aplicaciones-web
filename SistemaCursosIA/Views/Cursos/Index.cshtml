@@ -1,0 +1,18 @@
+@model IEnumerable<SistemaCursosIA.Models.Curso>
+@{ ViewData["Title"] = "Cursos"; }
+
+<div class="pagehead"><h1>Cursos de IA</h1><a class="button primary" asp-action="Create">Nuevo registro</a></div>
+@if (TempData["Error"] != null) { <div class="notice">@TempData["Error"]</div> }
+<div class="panel"><table class="table"><thead><tr><th>Nombre</th><th>Nivel</th><th>Cupos</th><th>Instructor</th><th>Acciones</th></tr></thead>
+<tbody>
+@foreach (var item in Model)
+{
+  <tr><td>@item.Nombre</td><td>@item.Nivel</td><td>@item.Cupos</td><td>@(item.Instructor?.Nombre ?? "—")</td><td class="actions">
+  <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+  <a asp-action="Details" asp-route-id="@item.Id">Ver</a>
+  <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+  </td></tr>
+}
+</tbody></table>
+@if (!Model.Any()) { <p>Todavía no hay registros. Puedes agregar uno desde el botón superior.</p> }
+</div>

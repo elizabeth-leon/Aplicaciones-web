@@ -1,0 +1,10 @@
+# Archivos generados por Visual Studio
+**/bin/
+**/obj/
+**/.vs/
+
+# Credenciales locales de MySQL
+**/appsettings.Development.json
+
+# Configuración privada
+**/*.user

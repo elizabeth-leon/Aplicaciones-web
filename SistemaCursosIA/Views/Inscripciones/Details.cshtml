@@ -1,0 +1,8 @@
+@model SistemaCursosIA.Models.Inscripcion
+@{ ViewData["Title"] = "Detalle"; }
+<h1>Detalle de inscripcion</h1>
+<div class="panel"><dl><dt>Estudiante</dt><dd>@(Model.Estudiante?.Nombre ?? "—")</dd>
+<dt>Curso</dt><dd>@(Model.Curso?.Nombre ?? "—")</dd>
+<dt>FechaInscripcion</dt><dd>@Model.FechaInscripcion.ToString("dd/MM/yyyy")</dd>
+<dt>Estado</dt><dd>@Model.Estado</dd></dl>
+<div class="form-actions"><a class="button primary" asp-action="Edit" asp-route-id="@Model.Id">Editar</a><a class="button" asp-action="Index">Volver</a></div></div>

@@ -1,0 +1,15 @@
+@model SistemaCursosIA.Models.Inscripcion
+@{ ViewData["Title"] = "Editar inscripción"; }
+<h1>Editar inscripción</h1>
+<div class="panel">
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="validation-summary-errors"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="field"><label asp-for="EstudianteId"></label><select asp-for="EstudianteId" asp-items="ViewBag.EstudianteId"><option value="">Selecciona una opción</option></select><span asp-validation-for="EstudianteId"></span></div>
+<div class="field"><label asp-for="CursoId"></label><select asp-for="CursoId" asp-items="ViewBag.CursoId"><option value="">Selecciona una opción</option></select><span asp-validation-for="CursoId"></span></div>
+<div class="field"><label asp-for="FechaInscripcion"></label><input asp-for="FechaInscripcion" type="date" class="input"/><span asp-validation-for="FechaInscripcion"></span></div>
+<div class="field"><label asp-for="Estado"></label><select asp-for="Estado"><option value="Activa">Activa</option><option value="Cancelada">Cancelada</option></select><span asp-validation-for="Estado"></span></div>
+    <div class="form-actions"><button type="submit" class="button primary">Guardar</button><a class="button" asp-action="Index">Cancelar</a></div>
+</form>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

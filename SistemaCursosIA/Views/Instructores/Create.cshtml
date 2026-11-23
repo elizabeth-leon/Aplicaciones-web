@@ -1,0 +1,15 @@
+@model SistemaCursosIA.Models.Instructor
+@{ ViewData["Title"] = "Nuevo instructor"; }
+<h1>Nuevo instructor</h1>
+<div class="panel">
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="validation-summary-errors"></div>
+
+    <div class="field"><label asp-for="Nombre"></label><input asp-for="Nombre" type="text" class="input"/><span asp-validation-for="Nombre"></span></div>
+<div class="field"><label asp-for="Apellido"></label><input asp-for="Apellido" type="text" class="input"/><span asp-validation-for="Apellido"></span></div>
+<div class="field"><label asp-for="Especialidad"></label><input asp-for="Especialidad" type="text" class="input"/><span asp-validation-for="Especialidad"></span></div>
+<div class="field"><label asp-for="Correo"></label><input asp-for="Correo" type="email" class="input"/><span asp-validation-for="Correo"></span></div>
+    <div class="form-actions"><button type="submit" class="button primary">Guardar</button><a class="button" asp-action="Index">Cancelar</a></div>
+</form>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

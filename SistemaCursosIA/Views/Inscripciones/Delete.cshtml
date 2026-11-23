@@ -1,0 +1,6 @@
+@model SistemaCursosIA.Models.Inscripcion
+@{ ViewData["Title"] = "Eliminar"; }
+<h1>Eliminar inscripción</h1>
+<div class="panel"><p>¿Seguro que deseas eliminar este registro?</p><p><strong>ID:</strong> @Model.Id</p>
+<form asp-action="Delete" method="post"><input type="hidden" asp-for="Id" />
+<div class="form-actions"><button type="submit" class="button danger">Eliminar</button><a class="button" asp-action="Index">Cancelar</a></div></form></div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Centro de Capacitación</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+<header class="topbar">
+    <div class="container nav">
+        <a class="brand" asp-controller="Home" asp-action="Index">Centro <span>de Capacitación</span></a>
+        <nav aria-label="Menú principal">
+            <a asp-controller="Home" asp-action="Index">Inicio</a>
+            <a asp-controller="Home" asp-action="Index" asp-fragment="sobre-nosotros">Sobre nosotros</a>
+            <a asp-controller="Estudiantes" asp-action="Index">Estudiantes</a>
+            <a asp-controller="Instructores" asp-action="Index">Instructores</a>
+            <a asp-controller="Cursos" asp-action="Index">Cursos de IA</a>
+            <a asp-controller="Inscripciones" asp-action="Index">Inscripciones</a>
+        </nav>
+    </div>
+</header>
+@{
+    bool esInicio = string.Equals(ViewContext.RouteData.Values["controller"]?.ToString(), "Home", StringComparison.OrdinalIgnoreCase)
+        && (ViewContext.RouteData.Values["action"]?.ToString() == "Index");
+}
+<main class="@(esInicio ? "main main-home" : "container main")">@RenderBody()</main>
+<footer class="container footer">Centro de Capacitación · Cursos de Inteligencia Artificial</footer>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

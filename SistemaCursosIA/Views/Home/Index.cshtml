@@ -1,0 +1,32 @@
+@{ ViewData["Title"] = "Inicio"; }
+
+<section class="home-hero" aria-labelledby="hero-title">
+    <div class="home-hero-overlay">
+        <div class="home-hero-content">
+            <span class="hero-kicker">Formación y aprendizaje</span>
+            <h1 id="hero-title">Descubre el mundo de la Inteligencia Artificial</h1>
+            <p>Conoce nuestros cursos y da el siguiente paso para aprender nuevas herramientas y fortalecer tus conocimientos.</p>
+            <a class="button hero-button" asp-controller="Cursos" asp-action="Index">Ver cursos de IA</a>
+        </div>
+    </div>
+</section>
+
+<section class="about-section container" id="sobre-nosotros" aria-labelledby="about-title">
+    <div class="about-label">Sobre nosotros</div>
+    <h2 id="about-title">Bienvenido a nuestro Centro de Capacitación</h2>
+    <p>Somos un centro de formación continua que busca brindar una educación de calidad. Queremos que nuestros estudiantes amplíen sus conocimientos y desarrollen nuevas habilidades en menos tiempo, promoviendo el aprendizaje con ética, respeto y responsabilidad.</p>
+    <p>En nuestros cursos de Inteligencia Artificial encontrarás un espacio para conocer herramientas actuales y aprender a utilizarlas en situaciones prácticas.</p>
+</section>
+
+<section class="home-directory container" aria-labelledby="directory-title">
+    <div class="directory-heading">
+        <span class="about-label">Nuestro sistema</span>
+        <h2 id="directory-title">Gestión de cursos e inscripciones</h2>
+    </div>
+    <div class="cards">
+        <a class="dashcard" asp-controller="Estudiantes" asp-action="Index"><strong>Estudiantes</strong><span>Registro y consulta de estudiantes</span></a>
+        <a class="dashcard" asp-controller="Instructores" asp-action="Index"><strong>Instructores</strong><span>Docentes encargados de los cursos</span></a>
+        <a class="dashcard" asp-controller="Cursos" asp-action="Index"><strong>Cursos de IA</strong><span>Cursos disponibles y sus cupos</span></a>
+        <a class="dashcard" asp-controller="Inscripciones" asp-action="Index"><strong>Inscripciones</strong><span>Registro y seguimiento de matrículas</span></a>
+    </div>
+</section>
